@@ -3,7 +3,8 @@
 ## Build
 
 ```
-git clone https://github.com/HPCL-INHA/fault-injector
+wget https://github.com/HPCL-INHA/fault-injector/releases/download/src/src.zip
+unzip src.zip
 cd fault-injector
 mkdir build
 cd build
