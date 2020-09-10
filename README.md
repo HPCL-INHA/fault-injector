@@ -35,7 +35,7 @@ Sample: https://github.com/HPCL-INHA/fault-injector/releases/download/binary/x86
 
 ##### Profile Mode
 
-1. Set setting file like this
+1. Set `setting` file like this
 
 ```
 run_fault_injection 0
@@ -45,9 +45,9 @@ count_of_determine 54
 If `run_fault_injection` set to zero, then faultinjected binary is run as profile mode.
 `count_of_determine` is used to faultinjection processing
 
-2. Run ./a.out
+2. Run `./a.out`
 
-3. Read result file
+3. You can get outputs from `result` file
 
 ```
 [Fault Injector] RTL-Core Init!
