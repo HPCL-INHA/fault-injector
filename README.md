@@ -29,6 +29,49 @@ llc -filetype=obj rtl-core.ll -o rtl-core.obj
 clang rtl-core.obj test-injected.obj
 ```
 
+#### Test
+
+Sample: https://github.com/HPCL-INHA/fault-injector/releases/download/binary/x86_64-linux.tar.xz
+
+##### Profile Mode
+
+1. Set setting file like this
+
+```
+run_fault_injection 0
+count_of_determine 54
+```
+
+If `run_fault_injection` set to zero, then faultinjected binary is run as profile mode.
+`count_of_determine` is used to faultinjection processing
+
+2. Run ./a.out
+
+3. Read result file
+
+```
+[Fault Injector] RTL-Core Init!
+[Fault Injector] trace: f_index=00, index=01, reg_num=-1, dependency=-1, opcode=   load, size=32, value=00000001
+[Fault Injector] trace: f_index=00, index=00, reg_num=-1, dependency=-1, opcode=   load, size=32, value=00000000
+  .
+  .
+  .
+[Fault Injector] trace: f_index=00, index=00, reg_num=-1, dependency=-1, opcode=   load, size=32, value=00000001
+[Fault Injector] trace: f_index=00, index=08, reg_num=-1, dependency=-1, opcode=   load, size=32, value=00000000
+[Fault Injector] RTL-Core Finish!
+[Fault Injector] determine=14
+```
+
+##### Fault Injection Mode
+
+1. Set `run_fault_injection` to `1`
+
+2. Set `count_of_determine` to `determine` that can get from profile mode
+
+You can get the `determine` from the result in profile mode.
+`determine` is a list of all variables that can be specified at program execution time.
+By setting `count_of_determine`, you can specify the probability of a bitflip occurring.
+
 ### Fault Injector to Minimize the Impact of Binary Code
 
 ```
