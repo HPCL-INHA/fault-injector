@@ -3,8 +3,8 @@
 ## Build
 
 ```
-wget https://github.com/HPCL-INHA/fault-injector/releases/download/src/llvm10.zip
-unzip llvm10.zip
+git clone https://github.com/HPCL-INHA/fault-injector
+cd fault-injector
 mkdir build
 cd build
 cmake ../
